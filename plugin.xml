@@ -30,13 +30,23 @@
             <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
             <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
         </config-file>
+		 <config-file target="AndroidManifest.xml" parent="/application">
+            <meta-data android:name="com.baidu.lbsapi.API_KEY"  android:value="6OY5t6mXGYFGGTOirjP8ZPFx" />
+        </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
+			<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="6OY5t6mXGYFGGTOirjP8ZPFx" />
         </config-file>
         
         <source-file src="src/android/BaiduLocation.java" target-dir="src/com/spout/phonegap/plugins/baidulocation" />
         <source-file src="src/android/locSDK_6.13.jar" target-dir="libs" framework="true"/>
-        <source-file src="src/android/liblocSDK6a.so" target-dir="libs/armeabi" framework="true"/>
+        <source-file src="src/android/armeabi/liblocSDK6a.so" target-dir="libs/armeabi" framework="true"/>
+		<source-file src="src/android/arm64-v8a/liblocSDK6a.so" target-dir="libs/arm64-v8a" framework="true"/>
+		<source-file src="src/android/armeabi-v7a/liblocSDK6a.so" target-dir="libs/armeabi-v7a" framework="true"/>
+		<source-file src="src/android/mips/liblocSDK6a.so" target-dir="libs/mips" framework="true"/>
+		<source-file src="src/android/mips64/liblocSDK6a.so" target-dir="mips64/armeabi" framework="true"/>
+		<source-file src="src/android/x86/liblocSDK6a.so" target-dir="libs/x86" framework="true"/>
+		<source-file src="src/android/x86_64/liblocSDK6a.so" target-dir="x86_64/x86" framework="true"/>
     </platform>         
 </plugin>
