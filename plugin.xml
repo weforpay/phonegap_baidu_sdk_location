@@ -32,8 +32,13 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"></service>
-			<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="6OY5t6mXGYFGGTOirjP8ZPFx" />
+            <service android:enabled="true" android:name="com.baidu.location.f" android:process=":remote">
+				<intent-filter>
+					<action android:name="com.baidu.location.service_v2.2">
+					</action>
+				</intent-filter>
+			</service>
+			<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="MbLkuuhjp1xcjR4L1VAgOYYK" />
         </config-file>
         
         <source-file src="src/android/BaiduLocation.java" target-dir="src/com/spout/phonegap/plugins/baidulocation" />
